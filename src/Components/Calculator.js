@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Form from './Form';
 import Result from './Result';
 
@@ -23,7 +23,7 @@ class Calculator extends React.Component
   }
 
   calcPayable = () => {
-    if (this.state.loanAmount != '' && this.state.interestRatePct != '' && this.state.loanPeriodInYears != '') {
+    if (this.state.loanAmount !== '' && this.state.interestRatePct !== '' && this.state.loanPeriodInYears !== '') {
       let P = this.state.loanAmount;
       let r = this.state.interestRatePct;
       let n = this.state.loanPeriodInYears * 12;
@@ -57,19 +57,19 @@ class Calculator extends React.Component
 
   render() {
     return (
-      <div class="container min-vh-100 min-vw-100 bg-dark">
-        <div class="row min-vh-100">
-          <div class="col-md-6 mx-auto my-auto">
-            <div class="card bg-light">
+      <div className="container min-vh-100 min-vw-100 bg-dark">
+        <div className="row min-vh-100">
+          <div className="col-md-6 mx-auto my-auto">
+            <div className="card bg-light">
               
-              <div class="card-header text-center bg-info text-white">
-                <h2>Loan Calculator</h2>
+              <div className="card-header text-center bg-info text-white">
+                <h2>Home Loan Calculator</h2>
               </div>
 
-              <div class="card-body font-weight-bold">
+              <div className="card-body font-weight-bold">
                 <Form onChange={this.onChange.bind(this)} />
               </div>
-              <div class="card-body font-weight-bold bg-white text-dark">
+              <div className="card-body font-weight-bold bg-white text-dark">
                 <Result monthlyInstalment={this.state.monthlyInstalment} totalInterestPayable={this.state.totalInterestPayable} />
               </div>
             </div>
